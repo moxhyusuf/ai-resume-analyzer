@@ -1,11 +1,12 @@
 package resume
 
 import (
-	"ai-resume-analizyzer/pkg/groq"
-	"ai-resume-analizyzer/pkg/pdf"
 	"context"
 	"encoding/json"
 	"fmt"
+
+	"github.com/moxhyusuf/ai-resume-analyzer/pkg/groq"
+	"github.com/moxhyusuf/ai-resume-analyzer/pkg/pdf"
 
 	"github.com/google/uuid"
 )

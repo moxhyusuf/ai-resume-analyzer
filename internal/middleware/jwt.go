@@ -1,8 +1,9 @@
 package middleware
 
 import (
-	"ai-resume-analizyzer/pkg/response"
 	"strings"
+
+	"github.com/moxhyusuf/ai-resume-analyzer/pkg/response"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/golang-jwt/jwt/v5"

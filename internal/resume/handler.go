@@ -1,8 +1,9 @@
 package resume
 
 import (
-	"ai-resume-analizyzer/pkg/response"
 	"io"
+
+	"github.com/moxhyusuf/ai-resume-analyzer/pkg/response"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"

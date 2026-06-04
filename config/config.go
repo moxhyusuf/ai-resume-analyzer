@@ -1,11 +1,12 @@
 package config
 
 import (
-	"ai-resume-analizyzer/internal/resume"
-	"ai-resume-analizyzer/internal/user"
 	"fmt"
 	"log"
 	"os"
+
+	"github.com/moxhyusuf/ai-resume-analyzer/internal/resume"
+	"github.com/moxhyusuf/ai-resume-analyzer/internal/user"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"

@@ -1,4 +1,4 @@
-module ai-resume-analizyzer
+module github.com/moxhyusuf/ai-resume-analyzer
 
 go 1.26.3
 

@@ -28,7 +28,3 @@ go.work.sum
 
 # env file
 .env
-.env.*
-!.env.example
-
-set-env.sh

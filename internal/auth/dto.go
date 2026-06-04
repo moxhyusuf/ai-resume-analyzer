@@ -1,6 +1,6 @@
 package auth
 
-import "ai-resume-analizyzer/internal/user"
+import "github.com/moxhyusuf/ai-resume-analyzer/internal/user"
 
 type RegisterRequest struct {
 	Name     string `json:"name" validate:"required,min=2"`

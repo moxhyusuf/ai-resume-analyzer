@@ -1,53 +1,34 @@
 # Git
-
 .git
 .gitignore
 
-# Environment
-
-.env
-.env.*
-set-env.sh
-
 # Development
-
 .air.toml
 
 # Documentation & Collections
-
 postman/
 
-# Local deployment scripts
-
-deploy.sh
-
 # Editor
-
 .vscode/
 .idea/
 
 # OS files
-
 .DS_Store
 Thumbs.db
 
 # Logs
-
 *.log
 logs/
 
 # Coverage & Testing
-
 coverage.out
 *.test
 
 # Build artifacts
-
 bin/
 dist/
 build/
 tmp/
 
 # Go cache
-
 .cache/

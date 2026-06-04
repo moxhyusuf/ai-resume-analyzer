@@ -11,14 +11,15 @@
 package main
 
 import (
-	"ai-resume-analizyzer/config"
-	_ "ai-resume-analizyzer/docs"
-	"ai-resume-analizyzer/internal/auth"
-	"ai-resume-analizyzer/internal/middleware"
-	"ai-resume-analizyzer/internal/resume"
-	"ai-resume-analizyzer/internal/user"
-	"ai-resume-analizyzer/pkg/groq"
 	"log"
+
+	"github.com/moxhyusuf/ai-resume-analyzer/config"
+	_ "github.com/moxhyusuf/ai-resume-analyzer/docs"
+	"github.com/moxhyusuf/ai-resume-analyzer/internal/auth"
+	"github.com/moxhyusuf/ai-resume-analyzer/internal/middleware"
+	"github.com/moxhyusuf/ai-resume-analyzer/internal/resume"
+	"github.com/moxhyusuf/ai-resume-analyzer/internal/user"
+	"github.com/moxhyusuf/ai-resume-analyzer/pkg/groq"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/cors"

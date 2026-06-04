@@ -1,10 +1,11 @@
 package auth
 
 import (
-	"ai-resume-analizyzer/internal/user"
 	"fmt"
 	"log"
 	"time"
+
+	"github.com/moxhyusuf/ai-resume-analyzer/internal/user"
 
 	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"

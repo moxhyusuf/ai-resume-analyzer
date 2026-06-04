@@ -1,8 +1,8 @@
 package auth
 
 import (
-	"ai-resume-analizyzer/pkg/response"
-	"ai-resume-analizyzer/pkg/validator"
+	"github.com/moxhyusuf/ai-resume-analyzer/pkg/response"
+	"github.com/moxhyusuf/ai-resume-analyzer/pkg/validator"
 
 	"github.com/gofiber/fiber/v2"
 )

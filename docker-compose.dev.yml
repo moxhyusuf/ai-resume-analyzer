@@ -1,10 +1,14 @@
 services:
   app:
-    build: .
-    restart: unless-stopped
-    env_file: .env
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - .:/app
+      - /app/tmp       
     ports:
-      - "127.0.0.1:8080:8080"
+      - "8080:8080"
+    env_file: .env
     depends_on:
       postgres:
         condition: service_healthy
@@ -16,8 +20,10 @@ services:
       POSTGRES_USER: ${DB_USER}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
       POSTGRES_DB: ${DB_NAME}
+    ports:
+      - "5432:5432" 
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data_dev:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
       interval: 10s
@@ -26,4 +32,4 @@ services:
       start_period: 30s
 
 volumes:
-  postgres_data:
+  postgres_data_dev:

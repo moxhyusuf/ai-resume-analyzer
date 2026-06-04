@@ -1,4 +1,4 @@
-.PHONY: run build tidy test dev lint race clean
+.PHONY: run build tidy dev lint clean docker-dev-up docker-dev-down docker-prod
 
 run:
 	go run ./cmd/api
@@ -10,20 +10,20 @@ tidy:
 	go mod tidy
 	go mod verify
 
-test:
-	go test ./... -v
-
-race:
-	go test -race ./...
-
 dev:
-	swag init -g cmd/api/main.go --output docs && air -c .air.toml
+	air -c .air.toml
 
 lint:
 	golangci-lint run ./...
 
 clean:
 	rm -rf bin/ tmp/
+	
+docker-dev-up:
+	docker compose -f docker-compose.dev.yml up --build
 
-docker-build:
-	docker compose up --build -d && docker compose logs -f
+docker-dev-down:
+	docker compose -f docker-compose.dev.yml down
+
+docker-prod:
+	docker compose up --build
