@@ -1,13 +1,11 @@
 // @title           AI Resume Analyzer API
 // @version         1.0
 // @description     REST API untuk analisis resume menggunakan Groq AI
-// @host            localhost:8080
 // @BasePath        /api/v1
 // @securityDefinitions.apikey BearerAuth
 // @in header
 // @name Authorization
 // @description Type "Bearer" followed by a space and JWT token
-
 package main
 
 import (
@@ -56,7 +54,11 @@ func main() {
 	app.Use(logger.New())
 	app.Use(cors.New())
 
-	// Swagger ← tambah ini
+	app.Get("/", func(c *fiber.Ctx) error {
+		c.Set("Cache-Control", "no-store, no-cache, must-revalidate")
+		return c.Redirect("/swagger/index.html", fiber.StatusFound)
+	})
+
 	app.Get("/swagger/*", fiberswagger.WrapHandler)
 
 	api := app.Group("/api/v1")

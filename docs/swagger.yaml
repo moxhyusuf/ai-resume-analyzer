@@ -110,7 +110,6 @@ definitions:
       updated_at:
         type: string
     type: object
-host: localhost:8080
 info:
   contact: {}
   description: REST API untuk analisis resume menggunakan Groq AI

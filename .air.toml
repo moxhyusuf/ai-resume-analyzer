@@ -30,7 +30,7 @@ pre_cmd = ["swag init -g cmd/api/main.go --output docs"]
 rerun = false
 rerun_delay = 500
 send_interrupt = false
-stop_on_error = false
+stop_on_error = true
 
 [color]
 app = ""
