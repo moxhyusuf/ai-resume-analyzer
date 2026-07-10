@@ -2,9 +2,13 @@ services:
   app:
     build: .
     restart: unless-stopped
-    env_file: .env
     ports:
-      - "127.0.0.1:8080:8080"
+      - "127.0.0.1:${PORT}:${PORT}"
+    environment:
+      PORT: ${PORT}
+      DATABASE_URL: ${DATABASE_URL}
+      JWT_SECRET: ${JWT_SECRET}
+      GROQ_API_KEY: ${GROQ_API_KEY}
     depends_on:
       postgres:
         condition: service_healthy
