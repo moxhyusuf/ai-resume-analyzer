@@ -11,7 +11,9 @@ RUN go mod download && go mod verify
 COPY . .
 RUN swag init -g cmd/api/main.go --output docs
 
+ENV GOMAXPROCS=1
 RUN CGO_ENABLED=0 go build \
+    -p 1 \
     -ldflags="-w -s" \
     -buildvcs=false \
     -o /build/bin/api \

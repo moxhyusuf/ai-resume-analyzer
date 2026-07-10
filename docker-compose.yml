@@ -12,6 +12,12 @@ services:
     depends_on:
       postgres:
         condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
 
   postgres:
     image: postgres:17
@@ -28,6 +34,17 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+        reservations:
+          memory: 128M
+    command: >
+      postgres
+      -c shared_buffers=64MB
+      -c max_connections=20
+      -c work_mem=4MB
 
 volumes:
   postgres_data:
